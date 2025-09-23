@@ -17,7 +17,9 @@ form.addEventListener("submit", function(e) {
     count++;
     console.log("Total check-ins:", count);
 
-    const percentage = Math.round((count / maxCount) * 100) +"%";
+    const percentageCalculation = Math.round((count / maxCount) * 100);
+    const progressBar = document.getElementById("progressBar");
+    progressBar.style.width = percentageCalculation + "%";
     
     const teamCounter = document.getElementById(team + "Count");
     teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
