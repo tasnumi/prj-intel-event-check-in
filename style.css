@@ -345,12 +345,22 @@ select {
 /* Team card colors */
 .team-card.water {
   background-color: #e8f7fc;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px #b5d8e4;
+}
+
+.team-card.water:hover, .team-card.zero:hover, .team-card.power:hover {
+  transform: scale(1.05);
 }
 .team-card.zero {
   background-color: #ecfdf3;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px #bfe4ce;
 }
 .team-card.power {
   background-color: #fff7ed;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 6px #ddcebc;
 }
 
 .team-name {
@@ -358,7 +368,11 @@ select {
   font-weight: 500;
   color: #475569;
 }
-
+.winning-team {
+  border: 3px solid gold;
+  box-shadow: 0 0 10px gold;
+  background-color: #fffbe6;
+}
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hero {

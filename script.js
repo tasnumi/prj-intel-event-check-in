@@ -33,7 +33,7 @@ form.addEventListener("submit", function(e) {
     if(teamCount <= maxCount) {
         teamCounter.textContent = teamCount;
     }
-    winningTeam = calculateHighestTeam(teamNetZero, teamWaterWise, teamRenewables, winningTeam, highestCount, team, teamCount);
+    winningTeam = calculateHighestTeam(team);
     
     const attendanceCounter = document.getElementById("attendeeCount");
     
@@ -54,22 +54,37 @@ form.addEventListener("submit", function(e) {
             spread: 70,
             origin: { y: 0.6 }
         });
+
+        if (winningTeam === "Team Water Wise") {
+            document.querySelector(".team-card.water").classList.add("winning-team");
+        } 
+        else if (winningTeam === "Team Net Zero") {
+            document.querySelector(".team-card.zero").classList.add("winning-team");
+        } 
+        else if (winningTeam === "Team Renewables") {
+            document.querySelector(".team-card.power").classList.add("winning-team");
+        }
     }
+
     form.reset();
 })
 
-function calculateHighestTeam(teamNetZero, teamWaterWise, teamRenewables, winningTeam, highestCount, team, teamCount) {
+function calculateHighestTeam(team) {
     if(team === "zero") {
         teamNetZero++;
+        console.log("Team Net Zero: " + teamNetZero);
     }
     else if(team === "water") {
         teamWaterWise++;
+        console.log("Team Water Wise: " + teamWaterWise);
     }
     else if(team === "power") {
         teamRenewables++;
+        console.log("Team Renewables: " + teamRenewables);
     }
 
     highestCount = Math.max(teamNetZero, teamWaterWise, teamRenewables);
+    console.log(highestCount);
     if(highestCount === teamNetZero) {
         return winningTeam = "Team Net Zero";
     }
