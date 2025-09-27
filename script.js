@@ -65,13 +65,9 @@ form.addEventListener("submit", function(e) {
             document.querySelector(".team-card.power").classList.add("winning-team");
         }
     }
-
-    const listName = document.getElementById("attendee-container");
-    const li = document.createElement("p");
-    li.textContent = name;
-    li.classList.add("attendee-style");
-    listName.appendChild(li);
-
+    
+    attendeeList(name, teamName);
+    
     form.reset();
 })
 
@@ -104,4 +100,36 @@ function calculateHighestTeam(team) {
     }
 
     return winningTeam;
+}
+
+function attendeeList(name, teamName) {
+    const attendeeHeader = document.getElementById("attendee-header");
+
+    const attendeeContainer = document.getElementById("attendee-container");
+
+    attendeeHeader.innerHTML = "Attendee List";
+
+    const newAttendee = document.createElement("div");
+    newAttendee.classList.add("attendee-style");
+    const nameEl = document.createElement("p");
+    nameEl.textContent = name;
+
+    const teamEl = document.createElement("p");
+    teamEl.textContent = teamName;
+
+    newAttendee.appendChild(nameEl);
+    newAttendee.appendChild(teamEl);
+
+    if(teamName === "Team Water Wise") {
+        newAttendee.classList.add("water-container");
+    }
+    
+    else if(teamName === "Team Net Zero") {
+        newAttendee.classList.add("net-container");
+    }
+
+    else if(teamName === "Team Renewables") {
+       newAttendee.classList.add("renewables-container");
+    }
+    attendeeContainer.appendChild(newAttendee);
 }

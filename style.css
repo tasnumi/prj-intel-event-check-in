@@ -339,7 +339,26 @@ select {
   padding-top: 30px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+}
 
+.attendee-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 4px 0;
+  /* border: 1px solid #ccc; */
+  border-radius: 10px;
+  /* background-color: #f9f9f9; */
+  font-size: 14px;
+  animation: fadeIn 0.4s ease;
+}
+
+.attendee-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
 .attendee-list h4 {
@@ -347,8 +366,18 @@ select {
   margin-bottom: 20px;
 }
 
-.attendee-style {
-  background-color: rgb(195, 236, 216);
+
+
+.water-container {
+  background-color: #e8f7fc;
+}
+
+.net-container {
+  background-color: #ecfdf3;
+}
+
+.renewables-container {
+  background-color: #fff7ed;
 }
 
 .teams-grid {
