@@ -9,7 +9,7 @@ let teamRenewables = 0;
 let winningTeam;
 let highestCount = 0;
 
-const maxCount = 10;
+const maxCount = 50;
 //handle form submission
 form.addEventListener("submit", function(e) {
     e.preventDefault();
