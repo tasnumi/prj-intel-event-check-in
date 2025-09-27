@@ -26,7 +26,7 @@ form.addEventListener("submit", function(e) {
     const percentageCalculation = Math.round((count / maxCount) * 100);
     const progressBar = document.getElementById("progressBar");
     progressBar.style.width = percentageCalculation + "%";
-    
+    progressBar.textContent = percentageCalculation + "%";
     const teamCounter = document.getElementById(team + "Count");
     let teamCount = parseInt(teamCounter.textContent) + 1;
 
@@ -65,6 +65,12 @@ form.addEventListener("submit", function(e) {
             document.querySelector(".team-card.power").classList.add("winning-team");
         }
     }
+
+    const listName = document.getElementById("attendee-container");
+    const li = document.createElement("p");
+    li.textContent = name;
+    li.classList.add("attendee-style");
+    listName.appendChild(li);
 
     form.reset();
 })

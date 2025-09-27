@@ -221,6 +221,7 @@ button .fas {
   overflow: hidden;
   margin: 8px auto;
   position: relative;
+  
 }
 
 .progress-bar {
@@ -230,6 +231,11 @@ button .fas {
   background-image: linear-gradient(90deg, #0071c5, #00aeef);
   border-radius: 10px;
   transition: width 0.6s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
 }
 
 /* Adjust spacing between components */
@@ -328,6 +334,23 @@ select {
   margin-bottom: 20px;
 }
 
+.attendee-list {
+  margin-top: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.attendee-list h4 {
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+.attendee-style {
+  background-color: rgb(195, 236, 216);
+}
+
 .teams-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -352,11 +375,13 @@ select {
 .team-card.water:hover, .team-card.zero:hover, .team-card.power:hover {
   transform: scale(1.05);
 }
+
 .team-card.zero {
   background-color: #ecfdf3;
   transition: transform 0.3s ease;
   box-shadow: 0 4px 6px #bfe4ce;
 }
+
 .team-card.power {
   background-color: #fff7ed;
   transition: transform 0.3s ease;
@@ -368,11 +393,13 @@ select {
   font-weight: 500;
   color: #475569;
 }
+
 .winning-team {
   border: 3px solid gold;
   box-shadow: 0 0 10px gold;
   background-color: #fffbe6;
 }
+
 /* Mobile responsive */
 @media (max-width: 768px) {
   .hero {
